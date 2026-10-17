@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pedigree-ga4gh"
+version = "1.0.0"
+description = "Write, read, check and upgrade GA4GH Pedigree and Phenopackets v2 files for family pedigrees"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT AND Apache-2.0"
+license-files = ["LICENSE", "pedigree_ga4gh/LICENSE-KIN.txt"]
+authors = [{ name = "Tim Hearn", email = "tjh70@cam.ac.uk" }]
+keywords = ["GA4GH", "pedigree", "phenopackets", "KIN", "kinship", "family history", "genomics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Healthcare Industry",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+test = ["pytest>=7"]
+
+[project.scripts]
+pedigree-ga4gh = "pedigree_ga4gh.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/comparativechrono/pedigree-ga4gh"
+Documentation = "https://github.com/comparativechrono/pedigree-ga4gh/blob/main/docs/ga4gh.md"
+Issues = "https://github.com/comparativechrono/pedigree-ga4gh/issues"
+Changelog = "https://github.com/comparativechrono/pedigree-ga4gh/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["pedigree_ga4gh"]
+
+[tool.setuptools.package-data]
+pedigree_ga4gh = ["LICENSE-KIN.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
