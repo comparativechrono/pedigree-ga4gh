@@ -204,8 +204,10 @@ above.
   come from the biological relations (and sperm and egg donors); adoptive,
   foster and step-parents are not genetic parents and are not written there.
 * `consanguinousParents` (spelt as the schema spells it) says whether the
-  proband's parents are related, worked out from the relationships. It is
-  always written, even when false.
+  proband's parents are related, worked out from the relationships: they are
+  recorded as consanguineous partners, or are second cousins or closer, which
+  is KIN's definition of `KIN:030` and the usual one in clinical genetics. It
+  is always written, even when false.
 * The Family has its own `metaData`, and so does each Phenopacket in it.
 
 ## The checks

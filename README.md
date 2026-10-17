@@ -29,12 +29,18 @@ by HL7 FHIR, and neither form has been approved. pedigree-ga4gh writes:
   shared parents imply them.
 - **a Phenopackets Family** exactly to the Phenopackets v2 schema, with the
   whole family's pedigree in PED form and `consanguinousParents` worked out
-  from the relationships.
+  from the relationships: true when the proband's parents are recorded as
+  consanguineous partners, or are related as second cousins or closer, as
+  KIN defines it.
 
 Every file it writes passes phenopacket-tools' JSON schemas. A condition
 without an ontology term is left out with a warning rather than written with
-an empty id, and anything the standard has no field for – a carrier, a
-pregnancy – goes into the pedigree's narrative so that it isn't lost.
+an empty id, and so is a term from an ontology whose details it cannot write
+in `metaData`: it knows the HPO, Mondo, OMIM, Orphanet, the Disease Ontology,
+SNOMED CT, ICD-10-CM and the ontologies phenopacket-tools declares, and keeps
+any other ontology a file it reads declares in full. Anything the standard
+has no field for – a carrier, a pregnancy – goes into the pedigree's
+narrative so that it isn't lost.
 
 [docs/ga4gh.md](docs/ga4gh.md) sets out the decision, the sources behind it,
 and the draft of version 1 of the standard that is now under review.
@@ -98,9 +104,12 @@ do.
 
 studio2ga4gh up to 0.3 and abusua2ga4gh up to 0.2 wrote GA4GH files that the
 standard does not accept, and earlier drafts of KIN used codes that have since
-been retired. Those files are recognised: the readers refuse them with a
-message, and `pedigree-ga4gh upgrade` rewrites them once, listing every change
-and what still needs a person (usually conditions without an ontology term).
+been retired. Those files are recognised (`identify_legacy`): the commands,
+and the converters built on this package, refuse them with a message, and
+`pedigree-ga4gh upgrade` rewrites them once, listing every change and what
+still needs a person (usually conditions without an ontology term).
+`from_document` itself reads whatever it is given, so check with
+`identify_legacy` first if you call it directly.
 A file in the form of the draft of version 1 is recognised too, and refused
 with a message saying what it is: the draft isn't approved, and it can't be
 converted yet.
