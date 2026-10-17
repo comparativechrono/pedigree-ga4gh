@@ -6,7 +6,7 @@ means it is valid but probably wrong (a mother recorded as male, a term label
 that does not match KIN); *info* is for things worth knowing that are allowed.
 
 The structural checks mirror the JSON schemas and the MetaData check of
-phenopacket-tools, the GA4GH reference validator for Phenopackets v2, so a
+phenopacket-tools, the Phenopackets team's validator for Phenopackets v2, so a
 file that passes here should pass there. The GA4GH Pedigree checks follow the
 standard's conceptual model and its Phenopackets form (see
 :mod:`pedigree_ga4gh.pedigree`).
