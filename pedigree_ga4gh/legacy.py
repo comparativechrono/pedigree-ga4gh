@@ -50,7 +50,7 @@ from typing import Dict, List, Optional, Tuple
 
 from . import kin, ontology
 from . import phenopackets as pp
-from .kindred import DISEASE, Kindred, Member, Relation, Term, detect, to_ga4gh_pedigree
+from .kindred import Kindred, Member, Relation, detect, to_ga4gh_pedigree
 from .schema import camelise
 
 UPGRADED_BY = "pedigree-ga4gh upgrade"

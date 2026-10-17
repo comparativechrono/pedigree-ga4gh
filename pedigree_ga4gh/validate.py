@@ -19,7 +19,7 @@ from typing import Dict, List, Optional
 
 from . import kin, ontology
 from .phenopackets import is_iso_duration, is_partial_date, is_timestamp
-from .schema import (MESSAGES, MIN_ITEMS, ONEOF_REQUIRED, REQUIRED, camelise, enum_values, field,
+from .schema import (MESSAGES, MIN_ITEMS, ONEOF_REQUIRED, REQUIRED, camelise, enum_values,
                      fields, is_message, ontology_classes, walk)
 
 ERROR, WARNING, INFO = "error", "warning", "info"

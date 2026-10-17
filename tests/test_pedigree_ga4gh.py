@@ -3,7 +3,7 @@ import copy
 import json
 import os
 
-from pedigree_ga4gh import (Kindred, Member, Relation, Term, from_document, identify_legacy, kin, loads,
+from pedigree_ga4gh import (Kindred, Member, Relation, Term, from_document, identify_legacy, kin,
                             to_ga4gh_pedigree, to_phenopackets_family, upgrade, validate)
 from pedigree_ga4gh.validate import errors
 
