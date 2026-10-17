@@ -4,7 +4,8 @@ Write, read, check and upgrade the GA4GH files that describe a family: the
 **GA4GH Pedigree** and the **Phenopackets v2** Family, Phenopacket and Cohort.
 
 It is the one GA4GH implementation behind the Hearn lab's pedigree tools.
-studio2ga4gh, ga4gh2studio, the phenopacket toolkit (phenotk) and the
+studio2ga4gh, ga4gh2studio, abusua2ga4gh, ga4gh2abusua, the phenopacket
+toolkit (phenotk) and the
 [Pedigree workbench](https://github.com/comparativechrono/pedigree-workbench)
 all read and write GA4GH files through it, so they agree on a single form. It
 needs nothing beyond the Python standard library (Python 3.9 or later).

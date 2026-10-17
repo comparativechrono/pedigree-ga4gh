@@ -184,7 +184,9 @@ def upgrade(doc: Dict, *, created_by: str = UPGRADED_BY, created: Optional[str] 
         if carriers:
             notes.append("{} {} a carrier.".format(_who(carriers), "is" if len(carriers) == 1 else "are each"))
         if notes:
-            narrative = data.get("narrative") or ""
+            narrative = (data.get("narrative") or "").strip()
+            if narrative and not narrative.endswith((".", "!", "?")):
+                narrative += "."          # so that the notes read as sentences of their own
             extra = " ".join(notes)
             data["narrative"] = (narrative + " " + extra).strip() if narrative else extra
             changes.append("kept {} note(s) in the narrative".format(len(notes)))

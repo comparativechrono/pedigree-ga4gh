@@ -8,9 +8,9 @@ and standards → The GA4GH Pedigree) explains the same for people using it.
 ## In short
 
 * There is now **one implementation** of GA4GH output, this package.
-  studio2ga4gh, ga4gh2studio, the phenopacket toolkit and the Pedigree
-  workbench all read and write GA4GH files through it, so they cannot disagree
-  again.
+  studio2ga4gh, ga4gh2studio, abusua2ga4gh, ga4gh2abusua, the phenopacket
+  toolkit and the Pedigree workbench all read and write GA4GH files through
+  it, so they cannot disagree again.
 * A **GA4GH Pedigree** is written in the Phenopackets form of the published
   standard: `individuals` are full Phenopackets v2, `relationships` are
   `{individualId, relation, relativeId}` with a current KIN term as the
